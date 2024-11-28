@@ -1,0 +1,36 @@
+const ROLES = {
+  ADMIN: 'admin',
+  MODERATOR: 'moderator',
+  USER: 'user'
+};
+
+const PERMISSIONS = {
+  CREATE_USER: 'create:user',
+  READ_USER: 'read:user',
+  UPDATE_USER: 'update:user',
+  DELETE_USER: 'delete:user',
+  MANAGE_ROLES: 'manage:roles'
+};
+
+const ROLE_PERMISSIONS = {
+  [ROLES.ADMIN]: [
+    PERMISSIONS.CREATE_USER,
+    PERMISSIONS.READ_USER,
+    PERMISSIONS.UPDATE_USER,
+    PERMISSIONS.DELETE_USER,
+    PERMISSIONS.MANAGE_ROLES
+  ],
+  [ROLES.MODERATOR]: [
+    PERMISSIONS.READ_USER,
+    PERMISSIONS.UPDATE_USER
+  ],
+  [ROLES.USER]: [
+    PERMISSIONS.READ_USER
+  ]
+}
+
+export {
+  ROLES,
+  PERMISSIONS,
+  ROLE_PERMISSIONS
+};
